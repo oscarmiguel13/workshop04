@@ -23,10 +23,7 @@ elseif ($_POST['make'] == '') {
 }
 else{
 
-$hostname='sql12.freesqldatabase.com';
-$username='sql12254595';
-$password='fjRDDBTEwf';
-$dbname='sql12254595';
+include('dbconnect.php');
 
 try {
 $dbh = new PDO("mysql:host=$hostname;dbname=$dbname",$username,$password);
@@ -94,10 +91,7 @@ Mileage: <input type="text" name="mileage"><br>
 </form>
 <div>
     <?php
-        $hostname='sql12.freesqldatabase.com';
-        $username='sql12254595';
-        $password='fjRDDBTEwf';
-        $dbname='sql12254595';
+        include('dbconnect.php');
         try{
         $dbh = new PDO("mysql:host=$hostname;dbname=$dbname",$username,$password);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
